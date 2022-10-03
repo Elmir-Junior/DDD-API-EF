@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebApp.ApplicationPresentation.Models.ViewModels.Candidato.CandidatoIndexViewModel>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Idade
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Quantidade de Tecnologias
+            </th>            
+            <th>
+                Quantidade de Vagas
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Idade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.qtdTecnologias)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.qtdVagas)
+                </td>
+                <td>
+                    <a asp-controller="Candidato" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Editar</a> |
+                    <a href="Candidato/Delete/@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

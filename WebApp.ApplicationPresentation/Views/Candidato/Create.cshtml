@@ -1,0 +1,32 @@
+﻿@model WebApp.ApplicationPresentation.Models.ViewModels.Candidato.CandidatoCreateViewModel
+
+<form action="@Url.Action("Create","Candidato")" method="POST" enctype="multipart/form-data">
+
+
+
+    @foreach (var item in Model.TecnologiasCadastradas)
+    {
+
+
+        @Html.DisplayFor(modelItem => item.Nome)
+
+        @Html.DisplayFor(modelItem => item.Ponto)
+
+        <input type="checkbox" value="@item.Id" name="IdTecnologias[]">
+
+    }
+
+    @foreach (var item in Model.VagasCadastradas)
+    {
+
+
+        @Html.DisplayFor(modelItem => item.Nome)
+
+        @Html.DisplayFor(modelItem => item.Ponto)
+
+        <input type="checkbox" value="@item.Id" name="IdVagas[]">
+
+    }
+
+    <button type="submit">Salvar</button>
+</form>

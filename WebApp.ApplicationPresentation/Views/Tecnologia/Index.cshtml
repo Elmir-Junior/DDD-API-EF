@@ -1,0 +1,31 @@
+﻿@model IEnumerable<WebApp.Domain.Models.Tecnologia>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Pontos
+            </th>
+            <th>
+                Nome
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ponto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
