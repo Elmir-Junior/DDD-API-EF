@@ -29,7 +29,7 @@ namespace WebApp.Infrastructure.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(nullable: true),
                     Ponto = table.Column<int>(nullable: false),
-                    CandidatoId = table.Column<int>(nullable: true)
+                    CandidatoId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -50,7 +50,7 @@ namespace WebApp.Infrastructure.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(nullable: true),
                     Ponto = table.Column<int>(nullable: false),
-                    CandidatoId = table.Column<int>(nullable: true)
+                    CandidatoId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

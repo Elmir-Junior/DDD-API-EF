@@ -10,7 +10,7 @@ using WebApp.Infrastructure.Context;
 namespace WebApp.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(SQLContext))]
-    [Migration("20221001040452_InitialDB")]
+    [Migration("20221004201206_InitialDB")]
     partial class InitialDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

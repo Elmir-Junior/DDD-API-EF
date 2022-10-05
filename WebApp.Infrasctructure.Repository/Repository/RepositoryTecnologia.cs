@@ -20,5 +20,10 @@ namespace WebApp.Infrasctructure.Repository.Repository
             _context.Set<Tecnologia>().Remove(entry);
             _context.SaveChanges();
         }
+        public override Tecnologia GetById(int id)
+        {
+            var entry = _context.Tecnologias.First(e => e.Id == id);
+            return entry;
+        }
     }
 }

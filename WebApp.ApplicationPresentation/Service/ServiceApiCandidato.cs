@@ -28,7 +28,7 @@ namespace WebApp.ApplicationPresentation.Service
         {
             var obj = GetAll("/Api/Candidato/");
             IList<CandidatoIndexViewModel> candidatoViewModels = new List<CandidatoIndexViewModel>();
-            obj.ToList().ForEach(a => candidatoViewModels.Add(new CandidatoIndexViewModel(a.Id, a.Nome, a.Idade, a.Email, a.VagasCadastradas, a.TecnologiasCadastradas)));
+            obj.ToList().ForEach(a => candidatoViewModels.Add(new CandidatoIndexViewModel(a.Id.Value, a.Nome, a.Idade, a.Email, a.VagasCadastradas, a.TecnologiasCadastradas)));
             return candidatoViewModels;
         }
 
@@ -78,8 +78,8 @@ namespace WebApp.ApplicationPresentation.Service
                 Email = candidatoCreateView.Email,
                 Nome = candidatoCreateView.Nome,
                 Idade = candidatoCreateView.Idade,
-                TecnologiasCadastradas = tecnologias,
-                VagasCadastradas = vagas
+                TecnologiasCadastradas = tecnologias.ToList(),
+                VagasCadastradas = vagas.ToList()
             };
             return obj;
         }
